@@ -7,6 +7,30 @@
 
 using namespace Rcpp;
 
+// rwishart
+arma::mat rwishart(unsigned int df, const arma::mat& S);
+RcppExport SEXP r2arma_rwishart(SEXP dfSEXP, SEXP SSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< unsigned int >::type df(dfSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type S(SSEXP);
+    __result = Rcpp::wrap(rwishart(df, S));
+    return __result;
+END_RCPP
+}
+// riwishart
+arma::mat riwishart(unsigned int df, const arma::mat& S);
+RcppExport SEXP r2arma_riwishart(SEXP dfSEXP, SEXP SSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< unsigned int >::type df(dfSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type S(SSEXP);
+    __result = Rcpp::wrap(riwishart(df, S));
+    return __result;
+END_RCPP
+}
 // rev_col_subset
 arma::mat rev_col_subset(arma::mat x, unsigned int start, unsigned int end);
 RcppExport SEXP r2arma_rev_col_subset(SEXP xSEXP, SEXP startSEXP, SEXP endSEXP) {
@@ -152,30 +176,6 @@ BEGIN_RCPP
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< const arma::vec& >::type x(xSEXP);
     __result = Rcpp::wrap(dft_acf(x));
-    return __result;
-END_RCPP
-}
-// rwishart
-arma::mat rwishart(unsigned int df, const arma::mat& S);
-RcppExport SEXP r2arma_rwishart(SEXP dfSEXP, SEXP SSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject __result;
-    Rcpp::RNGScope __rngScope;
-    Rcpp::traits::input_parameter< unsigned int >::type df(dfSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type S(SSEXP);
-    __result = Rcpp::wrap(rwishart(df, S));
-    return __result;
-END_RCPP
-}
-// riwishart
-arma::mat riwishart(unsigned int df, const arma::mat& S);
-RcppExport SEXP r2arma_riwishart(SEXP dfSEXP, SEXP SSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject __result;
-    Rcpp::RNGScope __rngScope;
-    Rcpp::traits::input_parameter< unsigned int >::type df(dfSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type S(SSEXP);
-    __result = Rcpp::wrap(riwishart(df, S));
     return __result;
 END_RCPP
 }

@@ -66,9 +66,6 @@ arma::vec reverse_vec(arma::vec x) {
 //' @param x A \code{field<vec>}.
 //' @return A \code{mat} containing the field elements within a column.
 //' @author JJB
-//' @examples
-//' x=rnorm(100)
-//' field_to_matrix(modwt_cpp(x))
 // [[Rcpp::export]]
 arma::mat field_to_matrix(arma::field<arma::vec> x){
   unsigned int nx = x.n_elem;
@@ -82,7 +79,7 @@ arma::mat field_to_matrix(arma::field<arma::vec> x){
   for(unsigned int i =0; i<nx; i++){
     A.col(i) = x(i);
   }
-  return A; 
+  return A;
 }
 
 //' @title Accumulation of Armadillo field<vec>
@@ -90,17 +87,14 @@ arma::mat field_to_matrix(arma::field<arma::vec> x){
 //' @param x A \code{field<vec>}.
 //' @return An \code{mat} containing the field elements within a column.
 //' @author JJB
-//' @examples
-//' x=rnorm(100)
-//' field_to_matrix(modwt_cpp(x))
 // [[Rcpp::export]]
 double sum_field_vec(const arma::field<arma::vec>& x){
   unsigned int nelems = x.n_elem;
   double total_elems = 0;
-  
+
   for(unsigned int i = 0; i < nelems; i++){
     total_elems += sum(x(i));
   }
-  
+
   return total_elems;
 }
