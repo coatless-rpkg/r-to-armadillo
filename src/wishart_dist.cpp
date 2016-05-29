@@ -1,6 +1,4 @@
-#include <RcppArmadillo.h>
-using namespace Rcpp;
-// [[Rcpp::depends(RcppArmadillo)]]
+#include <r2arma.h>
 
 //' @title Generate Random Wishart Distribution
 //' @description Creates a random wishart distribution when given degrees of freedom and a sigma matrix. 

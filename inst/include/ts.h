@@ -1,5 +1,5 @@
-#ifndef R_TO_ARMADILLO
-#define R_TO_ARMADILLO
+#ifndef R2ARMA_TIMESERIES_H
+#define R2ARMA_TIMESERIES_H
 
 #define my_isok(x) (!ISNA(x) & !ISNAN(x))
 

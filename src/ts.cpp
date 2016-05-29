@@ -1,11 +1,4 @@
-#include <RcppArmadillo.h>
-
-#include "ts.h"
-#include "armadillo_manipulations.h"
-
-using namespace Rcpp;
-
-// [[Rcpp::depends(RcppArmadillo)]]
+#include <r2arma.h>
 
 /* ----------------- R to Armadillo Functions ------------------ */
 

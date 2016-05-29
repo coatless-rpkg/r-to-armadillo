@@ -1,5 +1,5 @@
-#ifndef ARMADILLO_MANIPULATIONS
-#define ARMADILLO_MANIPULATIONS
+#ifndef R2ARMA_MANIPULATIONS_H
+#define R2ARMA_MANIPULATIONS_H
 
 arma::mat rev_col_subset(arma::mat x, unsigned int start, unsigned int end);
 

@@ -1,9 +1,4 @@
-#include <RcppArmadillo.h>
-#include "armadillo_manipulations.h"
-
-using namespace Rcpp;
-
-// [[Rcpp::depends(RcppArmadillo)]]
+#include <r2arma.h>
 
 //' @title Reverse Subset Column
 //' @description Subsets the column by going from high indices to low (the reverse of the supported practice)
