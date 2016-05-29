@@ -39,6 +39,9 @@ The current implementation has:
     * Calculate Discrete Fourier Transformation (DFT) for Autocovariance Function (ACF)
 * [Sequences](https://github.com/coatless/r-to-armadillo/blob/master/src/seq.cpp)
     * Generate Integer Sequence from `a` to `b`
+    * Generate Double Sequence form `a` to `b` or `-a` to `a` with `n` points.
+    * Obtain a sequence along a vector.
+    * Obtain a sequence given a vector length.
 * [Manipulations](https://github.com/coatless/r-to-armadillo/blob/master/src/manipulations.cpp)
     * Vector
         * Reverse vector (e.g. `1:3` => `3:1`)

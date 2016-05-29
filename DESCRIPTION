@@ -1,6 +1,6 @@
 Package: r2arma
 Title: R-based using the Armadillo C++ Matrix Library
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: person("James", "Balamuta", email = "balamut2@illinois.edu", role = c("aut", "cre"))
 Description: Provides C++ headers that contain implementations of some base R
     functions.
@@ -12,6 +12,8 @@ LazyData: true
 LinkingTo: Rcpp, RcppArmadillo
 Imports:
     Rcpp
+SystemRequirements: C++11
 URL: https://github.com/coatless/r-to-armadillo
 BugReports: https://github.com/coatless/r-to-armadillo/issues
 RoxygenNote: 5.0.1
+Suggests: testthat

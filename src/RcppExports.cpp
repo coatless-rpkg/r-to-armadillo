@@ -91,14 +91,61 @@ BEGIN_RCPP
 END_RCPP
 }
 // seq_int
-arma::vec seq_int(int a, int b);
+arma::vec seq_int(long int a, long int b);
 RcppExport SEXP r2arma_seq_int(SEXP aSEXP, SEXP bSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
-    Rcpp::traits::input_parameter< int >::type a(aSEXP);
-    Rcpp::traits::input_parameter< int >::type b(bSEXP);
+    Rcpp::traits::input_parameter< long int >::type a(aSEXP);
+    Rcpp::traits::input_parameter< long int >::type b(bSEXP);
     __result = Rcpp::wrap(seq_int(a, b));
+    return __result;
+END_RCPP
+}
+// seq_default
+arma::vec seq_default(long double from, long double to, long unsigned int length_out);
+RcppExport SEXP r2arma_seq_default(SEXP fromSEXP, SEXP toSEXP, SEXP length_outSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< long double >::type from(fromSEXP);
+    Rcpp::traits::input_parameter< long double >::type to(toSEXP);
+    Rcpp::traits::input_parameter< long unsigned int >::type length_out(length_outSEXP);
+    __result = Rcpp::wrap(seq_default(from, to, length_out));
+    return __result;
+END_RCPP
+}
+// seq_default_a
+arma::vec seq_default_a(long double a, long double length_out);
+RcppExport SEXP r2arma_seq_default_a(SEXP aSEXP, SEXP length_outSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< long double >::type a(aSEXP);
+    Rcpp::traits::input_parameter< long double >::type length_out(length_outSEXP);
+    __result = Rcpp::wrap(seq_default_a(a, length_out));
+    return __result;
+END_RCPP
+}
+// seq_along_cpp
+arma::vec seq_along_cpp(const arma::vec& along_with);
+RcppExport SEXP r2arma_seq_along_cpp(SEXP along_withSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::vec& >::type along_with(along_withSEXP);
+    __result = Rcpp::wrap(seq_along_cpp(along_with));
+    return __result;
+END_RCPP
+}
+// seq_len_cpp
+arma::vec seq_len_cpp(long unsigned int length_out);
+RcppExport SEXP r2arma_seq_len_cpp(SEXP length_outSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< long unsigned int >::type length_out(length_outSEXP);
+    __result = Rcpp::wrap(seq_len_cpp(length_out));
     return __result;
 END_RCPP
 }
