@@ -31,6 +31,19 @@ BEGIN_RCPP
     return __result;
 END_RCPP
 }
+// get_elements
+arma::vec get_elements(const arma::mat& x, const arma::uvec& row_ind, const arma::uvec& col_ind);
+RcppExport SEXP r2arma_get_elements(SEXP xSEXP, SEXP row_indSEXP, SEXP col_indSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< const arma::mat& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const arma::uvec& >::type row_ind(row_indSEXP);
+    Rcpp::traits::input_parameter< const arma::uvec& >::type col_ind(col_indSEXP);
+    __result = Rcpp::wrap(get_elements(x, row_ind, col_ind));
+    return __result;
+END_RCPP
+}
 // rev_col_subset
 arma::mat rev_col_subset(arma::mat x, unsigned int start, unsigned int end);
 RcppExport SEXP r2arma_rev_col_subset(SEXP xSEXP, SEXP startSEXP, SEXP endSEXP) {

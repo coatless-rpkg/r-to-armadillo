@@ -4,5 +4,5 @@
 #include <distributions.h>
 #include <seq.h>
 #include <ts.h>
-#include <armadillo_manipulations.h>
+#include <manipulations.h>
 #endif

@@ -1,12 +1,47 @@
 #include <r2arma.h>
 
-//' @title Reverse Subset Column
-//' @description Subsets the column by going from high indices to low (the reverse of the supported practice)
-//' @usage rev_col_subset(x, start, end)
-//' @param x A \code{matrix} of dimensions M x N
+//' Subset Non-connected Regions
+//'
+//' Replicates the subset functionality of a matrix in R.
+//' @param x       A \code{matrix} of dimensions M x N
+//' @param row_ind A \code{unsigned int vec} that contains the row indices within \eqn{[0,M-1]}.
+//' @param col_ind A \code{unsigned int vec} that contains the column indices within \eqn{[0,N-1]}.
+//' @return A \code{vec} with each element listed according to index specification.
+//' @author JJB
+//' @examples
+//' # Generate a Matrix
+//' m = matrix(1:12, nrow = 4)
+//'
+//' # Select Non-connect regions
+//' row_index = c(1, 2, 1)
+//' col_index = c(2, 2, 3)
+//'
+//' # Subset in R
+//' m[cbind(row_index, col_index)]
+//'
+//' # Subset with Armadillo
+//' get_elements(m, row_index - 1, col_index - 1)
+// [[Rcpp::export]]
+arma::vec get_elements(const arma::mat& x, const arma::uvec& row_ind, const arma::uvec& col_ind){
+
+  unsigned int n = row_ind.n_elem;
+
+  arma::vec out(n);
+
+  for(unsigned int i = 0; i < n; i++){
+    out(i) = x(row_ind[i], col_ind[i]);
+  }
+
+  return out;
+}
+
+//' Reverse Subset Column
+//'
+//' Subsets the column by going from high indices to low (the reverse of the supported practice)
+//' @param x     A \code{matrix} of dimensions M x N
 //' @param start A \code{unsigned int} that indicates the starting column.
-//' @param end A \code{unsigned int} that indicates the ending column.
-//' @return x A \code{matrix} with matrix rows displayed in reverse order
+//' @param end   A \code{unsigned int} that indicates the ending column.
+//' @return A \code{matrix} with matrix rows displayed in reverse order
 //' @details Consider a vector x=[[1,2],[3,4]].
 //' By setting \code{start=1} and \code{end=0}, the function would output x=[[2,1],[4,1]].
 //' Start and end must be valid C++ matrix locations. (e.g. matrix cols start at 0 and not 1)
@@ -23,9 +58,9 @@ arma::mat rev_col_subset(arma::mat x, unsigned int start, unsigned int end){
   return A;
 }
 
-//' @title Reverse Subset Row
-//' @description Subsets the row by going from high indices to low (the reverse of the supported practice)
-//' @usage rev_row_subset(x, start, end)
+//' Reverse Subset Row
+//'
+//' Subsets the row by going from high indices to low (the reverse of the supported practice)
 //' @param x A \code{matrix} of dimensions M x N
 //' @param start A \code{unsigned int} that indicates the starting row.
 //' @param end A \code{unsigned int} that indicates the ending row.
@@ -45,11 +80,11 @@ arma::mat rev_row_subset(arma::mat x, unsigned int start, unsigned int end){
   return A;
 }
 
-//' @title Reverse Armadillo Vector
-//' @description Reverses the order of an Armadillo Vector
-//' @usage reverse_vec(x)
+//' Reverse Armadillo Vector
+//'
+//' Reverses the order of an Armadillo Vector
 //' @param x A \code{column vector} of length N
-//' @return x A \code{column vector} with its contents reversed.
+//' @return A \code{column vector} with its contents reversed.
 //' @details Consider a vector x=[1,2,3,4,5], the function would output x=[5,4,3,2,1].
 //' @author JJB
 //' @examples
@@ -61,8 +96,9 @@ arma::vec reverse_vec(arma::vec x) {
    return x;
 }
 
-//' @title Transform an Armadillo field<vec> to a matrix
-//' @description Unlists vectors in a field and places them into a matrix
+//' Transform an Armadillo field<vec> to a matrix
+//'
+//' Unlists vectors in a field and places them into a matrix
 //' @param x A \code{field<vec>}.
 //' @return A \code{mat} containing the field elements within a column.
 //' @author JJB
@@ -82,8 +118,9 @@ arma::mat field_to_matrix(arma::field<arma::vec> x){
   return A;
 }
 
-//' @title Accumulation of Armadillo field<vec>
-//' @description Sums vectors in a field into a single variable.
+//' Accumulation of Armadillo field<vec>
+//'
+//' Sums vectors in a field into a single variable.
 //' @param x A \code{field<vec>}.
 //' @return An \code{mat} containing the field elements within a column.
 //' @author JJB

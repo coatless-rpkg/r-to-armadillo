@@ -47,6 +47,7 @@ The current implementation has:
         * Reverse vector (e.g. `1:3` => `3:1`)
     * Matrix
         * Reverse subset for row/column (e.g. `0:3` vs. `3:0`)
+        * Subset Non-connected Regions (e.g. `c(0,1)` and `c(2,1)`)
     * Field
         * Convert `field<vec>` to `mat`
         * Total sum of elements in `field`

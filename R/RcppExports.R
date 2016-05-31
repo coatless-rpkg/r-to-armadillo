@@ -43,13 +43,38 @@ riwishart <- function(df, S) {
     .Call('r2arma_riwishart', PACKAGE = 'r2arma', df, S)
 }
 
-#' @title Reverse Subset Column
-#' @description Subsets the column by going from high indices to low (the reverse of the supported practice)
-#' @usage rev_col_subset(x, start, end)
-#' @param x A \code{matrix} of dimensions M x N
+#' Subset Non-connected Regions
+#'
+#' Replicates the subset functionality of a matrix in R.
+#' @param x       A \code{matrix} of dimensions M x N
+#' @param row_ind A \code{unsigned int vec} that contains the row indices within \eqn{[0,M-1]}.
+#' @param col_ind A \code{unsigned int vec} that contains the column indices within \eqn{[0,N-1]}.
+#' @return A \code{vec} with each element listed according to index specification.
+#' @author JJB
+#' @examples
+#' # Generate a Matrix
+#' m = matrix(1:12, nrow = 4)
+#'
+#' # Select Non-connect regions
+#' row_index = c(1, 2, 1)
+#' col_index = c(2, 2, 3)
+#'
+#' # Subset in R
+#' m[cbind(row_index, col_index)]
+#'
+#' # Subset with Armadillo
+#' get_elements(m, row_index - 1, col_index - 1)
+get_elements <- function(x, row_ind, col_ind) {
+    .Call('r2arma_get_elements', PACKAGE = 'r2arma', x, row_ind, col_ind)
+}
+
+#' Reverse Subset Column
+#'
+#' Subsets the column by going from high indices to low (the reverse of the supported practice)
+#' @param x     A \code{matrix} of dimensions M x N
 #' @param start A \code{unsigned int} that indicates the starting column.
-#' @param end A \code{unsigned int} that indicates the ending column.
-#' @return x A \code{matrix} with matrix rows displayed in reverse order
+#' @param end   A \code{unsigned int} that indicates the ending column.
+#' @return A \code{matrix} with matrix rows displayed in reverse order
 #' @details Consider a vector x=[[1,2],[3,4]].
 #' By setting \code{start=1} and \code{end=0}, the function would output x=[[2,1],[4,1]].
 #' Start and end must be valid C++ matrix locations. (e.g. matrix cols start at 0 and not 1)
@@ -61,9 +86,9 @@ rev_col_subset <- function(x, start, end) {
     .Call('r2arma_rev_col_subset', PACKAGE = 'r2arma', x, start, end)
 }
 
-#' @title Reverse Subset Row
-#' @description Subsets the row by going from high indices to low (the reverse of the supported practice)
-#' @usage rev_row_subset(x, start, end)
+#' Reverse Subset Row
+#'
+#' Subsets the row by going from high indices to low (the reverse of the supported practice)
 #' @param x A \code{matrix} of dimensions M x N
 #' @param start A \code{unsigned int} that indicates the starting row.
 #' @param end A \code{unsigned int} that indicates the ending row.
@@ -78,11 +103,11 @@ rev_row_subset <- function(x, start, end) {
     .Call('r2arma_rev_row_subset', PACKAGE = 'r2arma', x, start, end)
 }
 
-#' @title Reverse Armadillo Vector
-#' @description Reverses the order of an Armadillo Vector
-#' @usage reverse_vec(x)
+#' Reverse Armadillo Vector
+#'
+#' Reverses the order of an Armadillo Vector
 #' @param x A \code{column vector} of length N
-#' @return x A \code{column vector} with its contents reversed.
+#' @return A \code{column vector} with its contents reversed.
 #' @details Consider a vector x=[1,2,3,4,5], the function would output x=[5,4,3,2,1].
 #' @author JJB
 #' @examples
@@ -92,8 +117,9 @@ reverse_vec <- function(x) {
     .Call('r2arma_reverse_vec', PACKAGE = 'r2arma', x)
 }
 
-#' @title Transform an Armadillo field<vec> to a matrix
-#' @description Unlists vectors in a field and places them into a matrix
+#' Transform an Armadillo field<vec> to a matrix
+#'
+#' Unlists vectors in a field and places them into a matrix
 #' @param x A \code{field<vec>}.
 #' @return A \code{mat} containing the field elements within a column.
 #' @author JJB
@@ -101,8 +127,9 @@ field_to_matrix <- function(x) {
     .Call('r2arma_field_to_matrix', PACKAGE = 'r2arma', x)
 }
 
-#' @title Accumulation of Armadillo field<vec>
-#' @description Sums vectors in a field into a single variable.
+#' Accumulation of Armadillo field<vec>
+#'
+#' Sums vectors in a field into a single variable.
 #' @param x A \code{field<vec>}.
 #' @return An \code{mat} containing the field elements within a column.
 #' @author JJB
