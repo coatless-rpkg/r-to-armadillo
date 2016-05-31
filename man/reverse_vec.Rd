@@ -10,7 +10,7 @@ reverse_vec(x)
 \item{x}{A \code{column vector} of length N}
 }
 \value{
-x A \code{column vector} with its contents reversed.
+A \code{column vector} with its contents reversed.
 }
 \description{
 Reverses the order of an Armadillo Vector

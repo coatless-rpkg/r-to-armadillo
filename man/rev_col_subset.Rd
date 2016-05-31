@@ -14,7 +14,7 @@ rev_col_subset(x, start, end)
 \item{end}{A \code{unsigned int} that indicates the ending column.}
 }
 \value{
-x A \code{matrix} with matrix rows displayed in reverse order
+A \code{matrix} with matrix rows displayed in reverse order
 }
 \description{
 Subsets the column by going from high indices to low (the reverse of the supported practice)
