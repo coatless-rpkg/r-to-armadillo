@@ -36,4 +36,3 @@ get_elements(m, row_index - 1, col_index - 1)
 \author{
 JJB
 }
-

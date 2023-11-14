@@ -4,9 +4,20 @@
 \name{r2arma-package}
 \alias{r2arma}
 \alias{r2arma-package}
-\title{R-based using the Armadillo C++ Matrix Library}
+\title{r2arma: R-based using the Armadillo C++ Matrix Library}
 \description{
-Provides C++ headers that contain implementations of some base R
-functions.
+Provides C++ headers that contain implementations of some base R functions.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/coatless-rpkg/r-to-armadillo}
+  \item \url{https://r-pkg.thecoatlessprofessor.com/r-to-armadillo/}
+  \item Report bugs at \url{https://github.com/coatless-rpkg/r-to-armadillo/issues}
 }
 
+}
+\author{
+\strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
+
+}

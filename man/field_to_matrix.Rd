@@ -18,4 +18,3 @@ Unlists vectors in a field and places them into a matrix
 \author{
 JJB
 }
-

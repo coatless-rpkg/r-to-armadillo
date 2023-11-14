@@ -26,4 +26,3 @@ diff_cpp(x,1,1)
 \author{
 JJB
 }
-

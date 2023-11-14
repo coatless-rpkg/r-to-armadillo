@@ -21,10 +21,9 @@ Creates a random inverse wishart distribution when given degrees of freedom and 
 #Call with the following data:
 riwishart(3, diag(2))
 }
-\author{
-James J Balamuta
-}
 \seealso{
 \code{\link{rwishart}}
 }
-
+\author{
+James J Balamuta
+}

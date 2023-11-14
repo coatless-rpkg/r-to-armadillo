@@ -24,10 +24,9 @@ Creates a vector containing a sequence of values starting at the initial point a
 seq_default(1, 2, 10)
 seq_default(2, 1, 10)
 }
-\author{
-Anthony R. Colombo, James J Balamuta
-}
 \seealso{
 \code{\link{seq}}
 }
-
+\author{
+Anthony R. Colombo, James J Balamuta
+}

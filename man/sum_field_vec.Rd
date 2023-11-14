@@ -18,4 +18,3 @@ Sums vectors in a field into a single variable.
 \author{
 JJB
 }
-

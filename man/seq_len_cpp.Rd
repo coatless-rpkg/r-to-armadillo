@@ -20,10 +20,9 @@ Creates a vector containing a sequence of values starting at the initial point a
 seq_len_cpp(2)
 seq_len_cpp(4)
 }
-\author{
-James J Balamuta
-}
 \seealso{
 \code{\link{seq}}
 }
-
+\author{
+James J Balamuta
+}

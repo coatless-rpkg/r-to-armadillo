@@ -22,10 +22,9 @@ Creates a vector containing a sequence of values starting at the initial point a
 seq_int(3, 5)
 seq_int(5, 3)
 }
-\author{
-James J Balamuta
-}
 \seealso{
 \code{\link{rwishart}}
 }
-
+\author{
+James J Balamuta
+}

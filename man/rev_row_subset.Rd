@@ -30,4 +30,3 @@ rev_row_subset(x, 1, 0)
 \author{
 JJB
 }
-
