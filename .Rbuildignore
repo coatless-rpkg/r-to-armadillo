@@ -4,3 +4,7 @@
 ^README-.*\.png$
 ^\.travis\.yml$
 ^CONDUCT\.md$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

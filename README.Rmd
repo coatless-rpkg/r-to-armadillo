@@ -10,9 +10,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Travis-CI Build Status](https://travis-ci.org/coatless/r-to-armadillo.svg?branch=master)](https://travis-ci.org/coatless/r-to-armadillo)
 
 # R To Armadillo (`r2arma`)
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/coatless-rpkg/r-to-armadillo/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rpkg/r-to-armadillo/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 R is an amazing language to explore and communicate statistics with. However, when we care about attain results quickly, R's primary weakness is shown: speed. The objective of this repository is to strengthen this weakness by providing high performing R base functions within [Armadillo](http://arma.sourceforge.net/docs.html) (and potentially eigen). Futhermore, as the code is written within C++, the code is able to be ported to different platforms at ease. Lastly, an additional benefit of this project is a repository containing programming examples by field.
 
@@ -26,23 +29,23 @@ The functions written here act either as a means to replicate existing R functio
 
 The current implementation has:
 
-* [Distributions](https://github.com/coatless/r-to-armadillo/blob/master/src/distributions.cpp)
+* [Distributions](https://github.com/coatless-rpkg/r-to-armadillo/blob/master/src/distributions.cpp)
     * Random Sampling
         * Wishart
         * Inverse Wishart
-* [Time Series](https://github.com/coatless/r-to-armadillo/blob/master/src/ts.cpp)
+* [Time Series](https://github.com/coatless-rpkg/r-to-armadillo/blob/master/src/ts.cpp)
     * Difference by lag and number of differences
     * Discrete Integration by lag, number of differences, and - optionally - initial values.
     * Convert ARMA process to an infinite MA process
     * Compute the theoretical autocorrelation function (ACF) for an ARMA process.
     * Convolution (Moving Average) or Recursive (Autoregression) filters.
     * Calculate Discrete Fourier Transformation (DFT) for Autocovariance Function (ACF)
-* [Sequences](https://github.com/coatless/r-to-armadillo/blob/master/src/seq.cpp)
+* [Sequences](https://github.com/coatless-rpkg/r-to-armadillo/blob/master/src/seq.cpp)
     * Generate Integer Sequence from `a` to `b`
     * Generate Double Sequence form `a` to `b` or `-a` to `a` with `n` points.
     * Obtain a sequence along a vector.
     * Obtain a sequence given a vector length.
-* [Manipulations](https://github.com/coatless/r-to-armadillo/blob/master/src/manipulations.cpp)
+* [Manipulations](https://github.com/coatless-rpkg/r-to-armadillo/blob/master/src/manipulations.cpp)
     * Vector
         * Reverse vector (e.g. `1:3` => `3:1`)
     * Matrix
@@ -55,6 +58,6 @@ The current implementation has:
 
 # Contributing
 
-Contributions such as translations of R functions to C++ are welcome via a [pull request](https://github.com/coatless/r-to-armadillo/pulls). If you have a new feature request, please feel free to write an [issue](https://github.com/coatless/r-to-armadillo/issues). 
+Contributions such as translations of R functions to C++ are welcome via a [pull request](https://github.com/coatless-rpkg/r-to-armadillo/pulls). If you have a new feature request, please feel free to write an [issue](https://github.com/coatless-rpkg/r-to-armadillo/issues). 
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms. 
